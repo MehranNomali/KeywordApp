@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D0D0D0"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/edText"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="@drawable/corner_shape"
+            android:backgroundTint="@color/white"
+            android:hint="Enter some text"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtShow"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/corner_shape"
+            android:backgroundTint="@color/white"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:text="Last word: "
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/edText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/wordsRecview"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/txtShow"
+            app:spanCount="2"
+            tools:listitem="@layout/items_recview_wrods" />
+
+        <Button
+            android:id="@+id/btnCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:text="Check"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgState"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/txtState"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="28dp"
+            android:text="Your spelling is very good so far because you are without mistakes"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/imgState"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintStart_toEndOf="@+id/imgState"
+            app:layout_constraintTop_toTopOf="@+id/imgState"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imgState"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="84dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/wordsRecview"
+            tools:srcCompat="@drawable/very_good" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".95" />
+
+        <TextView
+            android:id="@+id/txtCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="Correct Words :"
+            app:layout_constraintBottom_toTopOf="@+id/imgState"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/wordsRecview"
+            app:layout_constraintVertical_bias="0.526" />
+
+        <TextView
+            android:id="@+id/txtCorrectNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="1"
+            android:textColor="#19FC00"
+            app:layout_constraintBottom_toBottomOf="@+id/txtCorrect"
+            app:layout_constraintStart_toEndOf="@+id/txtCorrect"
+            app:layout_constraintTop_toTopOf="@+id/txtCorrect" />
+
+        <TextView
+            android:id="@+id/txtIncorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="Incorrect Words :"
+            app:layout_constraintBottom_toTopOf="@+id/txtState"
+            app:layout_constraintStart_toEndOf="@+id/txtCorrectNum"
+            app:layout_constraintTop_toBottomOf="@+id/wordsRecview"
+            app:layout_constraintVertical_bias="0.414" />
+
+        <TextView
+            android:id="@+id/txtIncorrectNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="4"
+            android:textColor="#FF0000"
+            app:layout_constraintBottom_toBottomOf="@+id/txtIncorrect"
+            app:layout_constraintStart_toEndOf="@+id/txtIncorrect"
+            app:layout_constraintTop_toTopOf="@+id/txtIncorrect" />
+
+        <TextView
+            android:id="@+id/txtMasterySpelling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Mastery of spelling :"
+            app:layout_constraintBottom_toTopOf="@+id/txtState"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintHorizontal_bias="0.342"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/txtCorrect"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/txtMasterySpellingNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="25.5 %"
+            android:textColor="#002EFF"
+            app:layout_constraintBottom_toBottomOf="@+id/txtMasterySpelling"
+            app:layout_constraintStart_toEndOf="@+id/txtMasterySpelling"
+            app:layout_constraintTop_toBottomOf="@+id/txtCorrectNum"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            app:layout_constraintBottom_toBottomOf="@+id/btnCheck"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.445"
+            app:layout_constraintStart_toEndOf="@+id/btnCheck"
+            app:layout_constraintTop_toTopOf="@+id/btnCheck"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
