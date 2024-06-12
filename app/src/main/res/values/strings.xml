@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">KeywordApp</string>
+    <string name="veryGood_text">Your spelling is very good so far because you are without mistakes</string>
+    <string name="good_text">Your spelling is good so far because you had one mistake</string>
+    <string name="normal_text">Your spelling is not bad so far because you have enough mistakes</string>
+    <string name="littleBad_text">Your spelling is a bit bad so far because you had a few mistakes</string>
+    <string name="bad_text">You are ruining it. There are too many spelling mistakes</string>
+    <string name="veryBad_text">Wow, that`s enough, you have a lot of spelling mistakes</string>
+    <string name="terrible_text">You don`t write anything anymore or this spelling situation you have. My dear, your mistakes are terribly high</string>
 </resources>
