@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 incorrect++;
                 for (String wordIncorrect : wordSet) {
-                    if (editDistance(word, wordIncorrect) < 4) {
+                    if (editDistance(word, wordIncorrect) < 2) {
                         wordsSug.add(wordIncorrect);
                         Log.e("main", "yes edit-distance " + word + " : " + wordIncorrect);
                     }
